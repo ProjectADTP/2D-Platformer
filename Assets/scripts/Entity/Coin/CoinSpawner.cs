@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    [SerializeField] private CoinMovement _coin;
+    [SerializeField] private Coin _coin;
     [SerializeField] private List<SpawnerPoint> _spawnerPoints;
 
     private void Start()
     {
         SpawnCoins();
+    }
+
+    public void DestroyCoin(Coin coin)
+    {
+        Destroy(coin.gameObject);
     }
 
     private void SpawnCoins()

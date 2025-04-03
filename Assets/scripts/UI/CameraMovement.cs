@@ -4,7 +4,7 @@ using Cinemachine;
 public class FreezeCameraY : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
-    [SerializeField] private PlayerMovement target;
+    [SerializeField] private Player target;
     
     private float fixedY;
 
