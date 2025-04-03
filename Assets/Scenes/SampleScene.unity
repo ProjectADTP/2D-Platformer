@@ -719,7 +719,6 @@ GameObject:
   m_Component:
   - component: {fileID: 347737856}
   - component: {fileID: 347737855}
-  - component: {fileID: 347737854}
   - component: {fileID: 347737857}
   - component: {fileID: 347737858}
   - component: {fileID: 347737860}
@@ -727,6 +726,8 @@ GameObject:
   - component: {fileID: 347737862}
   - component: {fileID: 347737861}
   - component: {fileID: 347737864}
+  - component: {fileID: 347737865}
+  - component: {fileID: 347737866}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -734,33 +735,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &347737854
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347737853}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 3
-  m_LinearDrag: 0
-  m_AngularDrag: 0.15
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!70 &347737855
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -945,6 +919,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f97ebd94d571c40994423357a99f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &347737865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347737853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88bd115cd33ce9144984c4d47dca18c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &347737866
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347737853}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 3
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &465596944
 GameObject:
   m_ObjectHideFlags: 0
@@ -5136,7 +5149,7 @@ Transform:
   m_GameObject: {fileID: 1790084609}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2494979, y: 2.2033222, z: -9.959305}
+  m_LocalPosition: {x: -1.2472181, y: 2.2033145, z: -9.959305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

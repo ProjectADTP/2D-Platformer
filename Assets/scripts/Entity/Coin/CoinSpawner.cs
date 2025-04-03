@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +20,7 @@ public class CoinSpawner : MonoBehaviour
     {
         foreach (SpawnerPoint point in _spawnerPoints)
         {
-            Instantiate(_coin, point.transform.position, point.transform.rotation, this.transform);
+            Instantiate(_coin, point.transform.position, point.transform.rotation);
         }
     }
 }

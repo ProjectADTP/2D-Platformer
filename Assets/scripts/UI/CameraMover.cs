@@ -1,19 +1,19 @@
 using UnityEngine;
 using Cinemachine;
 
-public class FreezeCameraY : MonoBehaviour
+public class CameraMover : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private Player target;
     
     private float fixedY;
 
-    void Awake()
+    private void Awake()
     {
         fixedY = virtualCamera.transform.position.y;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         if (virtualCamera != null && target != null)
         {

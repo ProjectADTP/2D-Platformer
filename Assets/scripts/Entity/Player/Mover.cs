@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Mover : MonoBehaviour
 {
     private float _moveSpeed = 4f;
@@ -7,14 +8,12 @@ public class Mover : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
-    private Vector3 _baseScale;
     private Vector3 _basePosition;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
 
-        _baseScale = transform.localScale;
         _basePosition = transform.position;
     }
 
@@ -31,20 +30,8 @@ public class Mover : MonoBehaviour
 
     public void Move(float direction)
     {
-        transform.Translate(new Vector3(direction, 0f) * _moveSpeed * Time.fixedDeltaTime);
+        transform.Translate(new Vector3(direction, 0f, 0f) * _moveSpeed * Time.fixedDeltaTime);
         
-        SetupRotation(direction);
-    }
 
-    private void SetupRotation(float directional)
-    {
-        if (directional > 0)
-        {
-            transform.localScale = _baseScale;
-        }
-        else
-        {
-            transform.localScale = new Vector3(-_baseScale.x, _baseScale.y, _baseScale.z);
-        }
     }
 }
