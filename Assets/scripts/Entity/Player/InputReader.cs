@@ -16,7 +16,8 @@ public class InputReader : MonoBehaviour
             _isJump = true;
     }
 
-    public bool GetIsJump() => GetBoolAsTrigger(ref _isJump);
+    public bool GetIsJump() => 
+        GetBoolAsTrigger(ref _isJump);
 
     private bool GetBoolAsTrigger(ref bool value)
     {

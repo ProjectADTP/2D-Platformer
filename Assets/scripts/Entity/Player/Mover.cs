@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Mover : MonoBehaviour
@@ -9,9 +10,12 @@ public class Mover : MonoBehaviour
     private Rigidbody2D _rigidbody;
 
     private Vector3 _basePosition;
+    private PlayerRotation _rotation;
 
     private void Awake()
     {
+        _rotation = GetComponent<PlayerRotation>();
+
         _rigidbody = GetComponent<Rigidbody2D>();
 
         _basePosition = transform.position;
@@ -30,8 +34,7 @@ public class Mover : MonoBehaviour
 
     public void Move(float direction)
     {
-        transform.Translate(new Vector3(direction, 0f, 0f) * _moveSpeed * Time.fixedDeltaTime);
-        
-
+        transform.Translate(new Vector3(direction,0,0) * _moveSpeed * Time.deltaTime, Space.World);
+        _rotation.Rotate(direction);
     }
 }

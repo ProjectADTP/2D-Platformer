@@ -2,18 +2,12 @@
 
 public class PlayerRotation : MonoBehaviour
 {
-    private Vector3 _baseScale;
-
-    private void Awake()
+    public void Rotate(float moveInput)
     {
-        _baseScale = transform.localScale;    
-    }
+        Vector3 direction = new Vector3(0, 0, moveInput); 
 
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-            transform.localScale = _baseScale;
-        else if (Input.GetKeyDown(KeyCode.A))
-            transform.localScale = new Vector3(-_baseScale.x, _baseScale.y, _baseScale.z);
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1f);
     }
 }
