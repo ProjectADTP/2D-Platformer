@@ -4,13 +4,15 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private float _speed = 2f;
-
-    [SerializeField] private Transform[] _points;
-
+    
+    private Transform[] _points;
+    
     private int _currentPoint = 0;
 
-    private void Start()
+    public void GoToPoints(Transform[] points)
     {
+        _points = points;
+
         StartCoroutine(MoveToPoints());
     }
 
@@ -21,9 +23,7 @@ public class EnemyMover : MonoBehaviour
         while (_currentPoint < _points.Length)
         {
             if (transform.position.IsEnoughClose(_points[_currentPoint].transform.position, distanceToTarget))
-            {
                 _currentPoint = ++_currentPoint % _points.Length;
-            }
 
             transform.position = Vector3.MoveTowards(transform.position, _points[_currentPoint].transform.position, _speed * Time.deltaTime);
 

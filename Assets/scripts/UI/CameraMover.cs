@@ -18,7 +18,6 @@ public class CameraMover : MonoBehaviour
         if (virtualCamera != null && target != null)
         {
             Vector3 cameraPosition = virtualCamera.transform.position;
-
             cameraPosition.y = fixedY;
             cameraPosition.x = target.transform.position.x;
 

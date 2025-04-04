@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
     private InputReader _inputReader;
     private Mover _mover;
     private PlayerAnimator _playerAnimator;
+    private Teleporter _teleporter;
+
+    private Vector3 _basePosition;
 
     private void Awake()
     {
@@ -13,6 +16,9 @@ public class Player : MonoBehaviour
         _inputReader = GetComponent<InputReader>();
         _mover = GetComponent<Mover>();
         _groundDetector = GetComponent<CollisionDetector>();
+        _teleporter = GetComponent<Teleporter>();
+
+        _basePosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -26,13 +32,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _playerAnimator.Setup(_inputReader.Direction != 0 ? true : false, _groundDetector.IsGround);
+        _playerAnimator.SetIsMoving(_inputReader.Direction != 0);
+        _playerAnimator.SetIsGrounded(_groundDetector.IsGround);
 
         if (_groundDetector.IsDead)
-        {
-            _mover.TeleportToStart();
-        }
+            _teleporter.TeleportToStart(_basePosition);
     }
 }
-
-

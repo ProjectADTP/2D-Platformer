@@ -10,10 +10,13 @@ public class PlayerAnimator : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void Setup(bool isMoving, bool isGrounded) 
+    public void SetIsMoving(bool isMoving) 
     {
         _animator.SetBool(PlayerAnimatorData.Params.IsMoving, isMoving);
-        _animator.SetBool(PlayerAnimatorData.Params.IsGrounded, isGrounded);
     }
 
+    public void SetIsGrounded(bool isGrounded)
+    {
+        _animator.SetBool(PlayerAnimatorData.Params.IsGrounded, isGrounded);
+    }
 }

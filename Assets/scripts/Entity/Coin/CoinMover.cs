@@ -16,8 +16,7 @@ public class CoinMover : MonoBehaviour
     private void Update()
     {
         _timer += Time.deltaTime * _speed;
-        
-        float newYposition = Mathf.Sin(_timer) * _distance; 
-        transform.position = _startPosition + new Vector3(0, newYposition, 0); 
+
+        transform.position = _startPosition + new Vector3(0, Mathf.Sin(_timer) * _distance, 0); 
     }
 }

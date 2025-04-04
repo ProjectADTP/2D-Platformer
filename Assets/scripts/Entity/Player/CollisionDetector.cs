@@ -2,8 +2,6 @@
 
 public class CollisionDetector : MonoBehaviour
 {
-    [SerializeField] private CoinSpawner _coinSpawner;
-
     public bool IsGround { get; private set; }
     public bool IsDead { get; private set; }
 
@@ -14,9 +12,6 @@ public class CollisionDetector : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent<DeadZone>(out _) || collision.gameObject.TryGetComponent<Enemy>(out _))
             IsDead = true;
-
-        if (collision.gameObject.TryGetComponent<Coin>(out Coin coin))
-            _coinSpawner.DestroyCoin(coin);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
