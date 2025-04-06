@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rotator))]
 public class Mover : MonoBehaviour
 {
     private float _moveSpeed = 4f;

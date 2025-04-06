@@ -3,6 +3,7 @@
 public class InputReader : MonoBehaviour
 {
     public const string Horizontal = "Horizontal";
+    public const string Vertical = "Vertical";
 
     private bool _isJump;
 
@@ -12,7 +13,7 @@ public class InputReader : MonoBehaviour
     {
         Direction = Input.GetAxis(Horizontal);
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetAxis(Vertical) != 0)
             _isJump = true;
     }
 

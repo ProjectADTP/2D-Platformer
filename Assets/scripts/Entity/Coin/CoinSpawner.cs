@@ -11,7 +11,7 @@ public class CoinSpawner : MonoBehaviour
         SpawnCoins();
     }
 
-    public void DestroyCoin(Coin coin)
+    private void DestroyCoin(Coin coin)
     {
         coin.Taked -= DestroyCoin;
         Destroy(coin.gameObject);
